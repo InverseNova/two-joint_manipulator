@@ -1,4 +1,4 @@
-This module emulates two-joint manipulator work on the task of picking and placing items with
+This module emulates two-joint 2D manipulator work on the task of picking and placing items with
 given positions.
 
 manipulator.py contains "Manipulator" class which emulates manipulator work and gives methods to
