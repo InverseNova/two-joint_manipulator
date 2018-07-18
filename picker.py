@@ -49,7 +49,7 @@ class Picker(object):
         max_item_size = max(item['size'] for item in self.items)
         min_item_pos_y = min(item['position'][1] for item in self.items)
         safe_height = min_item_pos_y - max_item_size - GAP
-        transfer_height = min_item_pos_y - 2 * max_item_size - 2 * GAP
+        transfer_height = safe_height - max_item_size - GAP
         image = np.zeros(RESOLUTION, dtype=np.uint8)
 
         while len(replaced_items) < len(self.items):

@@ -26,9 +26,8 @@ def collect_items(show_video=True, record_video=False):
     for i, (item, pos) in enumerate(zip(items, x_positions)):
         x_positions[x_positions > pos] += item['size']
         x_positions[i] += item['size'] // 2
-    positions = [(x, EARTH_LEVEL - items[i]['size'] // 2) for i, x in enumerate(x_positions)]
-    for item, position in zip(items, positions):
-        item['position'] = position
+    for x, item in zip(x_positions, items):
+        item['position'] = (x, EARTH_LEVEL - item['size'] // 2)
 
     # set up video showing and recording
     window = "collect items demo" if show_video else None
